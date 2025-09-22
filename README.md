@@ -1,3 +1,4 @@
 A simple Python-based To-Do application that lets users add, view, and manage tasks efficiently.
 
-![commits_sep22](https://github.com/user-attachments/assets/375b44e2-9242-4965-9a91-75a755425066)
+<img width="1222" height="906" alt="image" src="https://github.com/user-attachments/assets/402ca16a-6c1f-4a6c-9ce0-9f7f31d927b7" />
+
