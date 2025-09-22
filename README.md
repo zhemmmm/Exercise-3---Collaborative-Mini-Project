@@ -1,4 +1,5 @@
-A simple Python-based To-Do application that lets users add, view, and manage tasks efficiently.
+fix: fix: handle KeyboardInterrupt (Ctrl+C) to exit gracefully
 
-<img width="1222" height="906" alt="image" src="https://github.com/user-attachments/assets/9be6e27a-14af-4ce7-885c-8d4fd0c4dbbb" />
+<img width="834" height="289" alt="image" src="https://github.com/user-attachments/assets/1b296cb5-234b-48c7-9af9-ae6b14a7cae5" />
+
 
