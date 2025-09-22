@@ -3,9 +3,11 @@
 
 tasks = []
 
+
 def addtask(task):
     tasks.append(task)
     print("✅ Task added!")
+
 
 def showTasks():
     if len(tasks) == 0:
@@ -15,12 +17,14 @@ def showTasks():
         for i in range(len(tasks)):
             print(f"   {i+1}. {tasks[i]}")
 
+
 def removetask(tasknumber):
     try:
         removed = tasks.pop(tasknumber - 1)  # fixed to 1-based index
         print(f"❌ Task removed: {removed}")
     except IndexError:
         print("⚠️  Invalid task number.")
+
 
 def main():
     print("=" * 40)
@@ -58,5 +62,10 @@ def main():
         else:
             print("⚠️  Invalid choice, try again.")
 
+
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\n\n👋 Goodbye! (Exited with Ctrl+C)")
+        print("=" * 40)
