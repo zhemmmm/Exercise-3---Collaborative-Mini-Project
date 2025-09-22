@@ -1,45 +1,62 @@
 # toDoApp.py
+"""Simple ToDo CLI app — UI improved version"""
 
 tasks = []
 
-
 def addtask(task):
     tasks.append(task)
-    print("task added!")
-
+    print("✅ Task added!")
 
 def showTasks():
     if len(tasks) == 0:
-        print("no tasks yet")
+        print("⚠️  No tasks yet.")
     else:
+        print("\n📋 Your Tasks:")
         for i in range(len(tasks)):
-            print(i + 1, ".", tasks[i])
-
+            print(f"   {i+1}. {tasks[i]}")
 
 def removetask(tasknumber):
-    tasks.pop(tasknumber)
-    print("task removed!!")
-
+    try:
+        removed = tasks.pop(tasknumber - 1)  # fixed to 1-based index
+        print(f"❌ Task removed: {removed}")
+    except IndexError:
+        print("⚠️  Invalid task number.")
 
 def main():
+    print("=" * 40)
+    print("   📌 Welcome to the ToDo App 📌   ")
+    print("=" * 40)
+
     while True:
-        print("1 Add Task")
-        print("2.Show Tasks")
-        print("3.Remove Task")
-        print("4- Exit")
-        ch = input("enter choice : ")
+        print("\nPlease choose an option:")
+        print("[1] ➕ Add Task")
+        print("[2] 📂 Show Tasks")
+        print("[3] ❌ Remove Task")
+        print("[4] 🚪 Exit")
+        print("-" * 40)
+
+        ch = input("Enter choice (1-4): ").strip()
+
         if ch == "1":
-            t = input("enter task : ")
+            t = input("Enter a new task: ")
             addtask(t)
         elif ch == "2":
             showTasks()
         elif ch == "3":
-            n = int(input("enter task no to remove: "))
-            removetask(n)
+            if not tasks:
+                print("⚠️  No tasks to remove.")
+                continue
+            n = input("Enter task number to remove: ")
+            if not n.isdigit():
+                print("⚠️  Please enter a valid number.")
+                continue
+            removetask(int(n))
         elif ch == "4":
+            print("\n👋 Goodbye! Thanks for using ToDo App.")
+            print("=" * 40)
             break
         else:
-            print("wrong choice!!")
+            print("⚠️  Invalid choice, try again.")
 
-
-main()
+if __name__ == "__main__":
+    main()
